@@ -1,7 +1,7 @@
 from django import forms
 
 
-class registrationForm(forms.Form):
+class reg_logForm(forms.Form):
     username = forms.CharField(
         label='login', max_length=30, min_length=4, required=True,
 

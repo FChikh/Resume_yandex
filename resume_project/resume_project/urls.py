@@ -20,5 +20,6 @@ from resume import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("login/", auth_views.login_page),
     path('', views.main)
 ]

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d610054-f520-4bfd-af25-f6283308bf0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resume/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resume/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/resume/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resume/auth_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resume/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/resume/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/resume_project/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resume/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+            <state relative-caret-position="81">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -48,11 +51,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resume_project/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="270">
+              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding>
                 <element signature="e#638#670#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resume/auth_views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1415">
+              <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resume/templates/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="139" column="22" lean-forward="true" selection-start-line="139" selection-start-column="22" selection-end-line="139" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -62,8 +86,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -75,7 +99,11 @@
       <list>
         <option value="$PROJECT_DIR$/resume/templates/main.cpp.html" />
         <option value="$PROJECT_DIR$/resume/views.py" />
+        <option value="$PROJECT_DIR$/resume_project/urls.py" />
+        <option value="$PROJECT_DIR$/resume/templates/auth_views.py" />
         <option value="$PROJECT_DIR$/resume/forms.py" />
+        <option value="$PROJECT_DIR$/resume/auth_views.py" />
+        <option value="$PROJECT_DIR$/resume/templates/login.html" />
       </list>
     </option>
   </component>
@@ -106,6 +134,12 @@
             <path>
               <item name="resume_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="resume_project" type="462c0819:PsiDirectoryNode" />
+              <item name="resume" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="resume_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="resume_project" type="462c0819:PsiDirectoryNode" />
               <item name="resume_project" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -119,6 +153,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/SimpleVotations" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resume" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -169,19 +208,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resume_project/settings.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resume_project/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="e#638#670#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resume/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -196,10 +222,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resume_project/settings.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resume/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        <state relative-caret-position="81">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resume_project/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#638#670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resume/auth_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1415">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resume/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="139" column="22" lean-forward="true" selection-start-line="139" selection-start-column="22" selection-end-line="139" selection-end-column="22" />
         </state>
       </provider>
     </entry>
