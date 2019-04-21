@@ -5,7 +5,7 @@ from django.db import IntegrityError
 from django.shortcuts import render, redirect
 from django.urls import NoReverseMatch
 
-from resume.forms import reg_logForm
+from resume.forms import RegistrationForm, LoginForm
 
 
 def signin_site_page(request):
@@ -26,12 +26,12 @@ def signin_site_page(request):
                 except NoReverseMatch:
                     return redirect('/')
             else:
-                form = reg_logForm()
+                form = LoginForm()
                 messages.error(request, 'Пользователь неактивен')
                 context['form'] = form
                 return render(request, 'signin_site.html', context)
         else:
-            form = reg_logForm()
+            form = LoginForm()
             messages.error(request, 'Неверные логин или пароль')
             context['form'] = form
             return render(request, 'signin_site.html', context)
@@ -44,9 +44,10 @@ def register(request):
     context['title'] = 'Регистрация'
 
     if request.method == "GET":
-        context['form'] = reg_logForm()
+        context['form'] = RegistrationForm()
     elif request.method == "POST":
-        form = reg_logForm(request.POST)
+        form = RegistrationForm(request.POST)
+        print(form)
         if form.is_valid():
             try:
                 user = User.objects.create_user(
