@@ -56,7 +56,7 @@ def register(request):
                 )
             except IntegrityError:
                 messages.error(request, 'Пользователь с таким логином уже существует')
-                return render(request, 'signin.html', context)
+                return render(request, 'registraion.html', context)
             else:
                 user.save()
                 login(request, user)
