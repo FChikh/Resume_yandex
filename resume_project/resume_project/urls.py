@@ -26,8 +26,8 @@ from resume import views, auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("signin_site/", auth_views.signin_site_page),
-    path("register/", auth_views.register),
+    path('signin_site/', auth_views.signin_site_page),
+    path('register/', auth_views.register),
     path('', views.main)
 ]
 
