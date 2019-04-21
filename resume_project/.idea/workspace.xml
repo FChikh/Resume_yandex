@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d610054-f520-4bfd-af25-f6283308bf0d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resume_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/resume_project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resume/templates/signin_site.html" beforeDir="false" afterPath="$PROJECT_DIR$/resume/templates/signin_site.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +52,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resume_project/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="522">
@@ -75,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resume/templates/signin_site.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-254">
-              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+            <state relative-caret-position="266">
+              <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -107,10 +108,10 @@
         <option value="$PROJECT_DIR$/static/tmp.py" />
         <option value="$PROJECT_DIR$/resume/templates/main.html" />
         <option value="$PROJECT_DIR$/resume/templates/login.html" />
-        <option value="$PROJECT_DIR$/resume/templates/signin_site.html" />
         <option value="$PROJECT_DIR$/resume/auth_views.py" />
         <option value="$PROJECT_DIR$/resume_project/settings.py" />
         <option value="$PROJECT_DIR$/resume_project/urls.py" />
+        <option value="$PROJECT_DIR$/resume/templates/signin_site.html" />
       </list>
     </option>
   </component>
@@ -248,13 +249,6 @@
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resume/templates/signin_site.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-254">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resume/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -286,6 +280,13 @@
           <folding>
             <element signature="e#638#670#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resume/templates/signin_site.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
         </state>
       </provider>
     </entry>
