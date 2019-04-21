@@ -8,7 +8,7 @@ from django.urls import NoReverseMatch
 from resume.forms import reg_logForm
 
 
-def login_page(request):
+def signin_site_page(request):
     context = dict()
     next_page = request.GET.get('next', '/')
     username = password = ''
@@ -37,7 +37,7 @@ def login_page(request):
     return render(request, 'signin_site.html', context)
 
 
-def signup_site_page(request):
+def register(request):
     next_page = request.GET.get('next', '')
     context = dict()
     context['title'] = 'Регистрация'
