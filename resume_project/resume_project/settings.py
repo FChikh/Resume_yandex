@@ -25,7 +25,7 @@ SECRET_KEY = 'ayst%@!fvb7*ol0$7ns6tswx+7=6b7684q-o&z*p&kh*unr%)k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['reserve.3ddrawer.ru', '127.0.0.1']
 
 
 # Application definition
