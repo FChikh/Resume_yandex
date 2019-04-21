@@ -37,7 +37,7 @@ def login_page(request):
     return render(request, 'login.html', context)
 
 
-def signup_page(request):
+def signup_site_page(request):
     next_page = request.GET.get('next', '')
     context = dict()
     context['title'] = 'Регистрация'
@@ -66,4 +66,4 @@ def signup_page(request):
         else:
             context['form'] = form
 
-    return render(request, 'signin.html', context)
+    return render(request, 'signin_site.html', context)
