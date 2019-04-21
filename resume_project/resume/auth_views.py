@@ -34,7 +34,7 @@ def login_page(request):
             messages.error(request, 'Неверные логин или пароль')
             context['form'] = form
             return render(request, 'login.html', context)
-    return render(request, 'login.html', context)
+    return render(request, 'signin_site.html', context)
 
 
 def signup_site_page(request):
@@ -66,4 +66,4 @@ def signup_site_page(request):
         else:
             context['form'] = form
 
-    return render(request, 'signin_site.html', context)
+    return render(request, 'registration.html', context)
