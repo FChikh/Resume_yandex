@@ -28,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', auth_views.signin_site_page),
     path('register/', auth_views.register),
+    path('main/', views.mymain),
     path('', views.main)
 ]
 
