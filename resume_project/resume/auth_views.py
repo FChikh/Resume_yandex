@@ -13,6 +13,7 @@ def signin_site_page(request):
     next_page = request.GET.get('next', '/')
     username = password = ''
     context['next'] = next_page
+
     if request.POST:
         username = request.POST['username']
         password = request.POST['password']
@@ -28,12 +29,12 @@ def signin_site_page(request):
                 form = reg_logForm()
                 messages.error(request, 'Пользователь неактивен')
                 context['form'] = form
-                return render(request, 'login.html', context)
+                return render(request, 'signin_site.html', context)
         else:
             form = reg_logForm()
             messages.error(request, 'Неверные логин или пароль')
             context['form'] = form
-            return render(request, 'login.html', context)
+            return render(request, 'signin_site.html', context)
     return render(request, 'signin_site.html', context)
 
 
