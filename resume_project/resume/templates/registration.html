@@ -40,6 +40,16 @@
                                 <label for="re_password"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input required type="password" name="re_password" id="re_password" placeholder="Repeat your password"/>
                             </div>
+                            {% if password_match == 0 %}
+                            <div class="form-group">
+                                <h4>Passwords you inserted didn't match</h4>
+                            </div>
+                            {% endif %}
+                            {% if invalid_form == 1 %}
+                            <div class="form-group">
+                                <h4>Some field had unexceptable format</h4>
+                            </div>
+                            {% endif %}
                             <div class="form-group">
                                 <input required type="checkbox" name="agree_term" id="agree-term" class="agree-term" />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>

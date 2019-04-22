@@ -42,32 +42,34 @@ def register(request):
     next_page = request.GET.get('next', '')
     context = dict()
     context['title'] = 'Регистрация'
+    context['password_match'] = 1
+    context['invalid_form'] = 0
 
     if request.method == "GET":
         context['form'] = RegistrationForm()
     elif request.method == "POST":
         form = RegistrationForm(request.POST)
-        print(form)
+        if form.data.get('password') == form.data.get('re_password') and not(form.is_valid()):
+            context['invalid_form'] = 0
+        elif form.data.get('password') != form.data.get('re_password'):
+            context['password_match'] = 0
         if form.is_valid():
-            if form.data.get('password') == form.data.get('re_password'):
-                try:
-                    user = User.objects.create_user(
-                        username=form.data.get('username'),
-                        email=form.data.get('email'),
-                        password=form.data.get('password'),
-                    )
-                except IntegrityError:
-                    messages.error(request, 'Пользователь с таким логином уже существует')
-                    return render(request, 'registraion.html', context)
-                else:
-                    user.save()
-                    login(request, user)
-                    try:
-                        return redirect(next_page)
-                    except NoReverseMatch:
-                        return redirect('/')
+            try:
+                user = User.objects.create_user(
+                    username=form.data.get('username'),
+                    email=form.data.get('email'),
+                    password=form.data.get('password'),
+                )
+            except IntegrityError:
+                messages.error(request, 'Пользователь с таким логином уже существует')
+                return render(request, 'registration.html', context)
             else:
-                pass
+                user.save()
+                login(request, user)
+                try:
+                    return redirect(next_page)
+                except NoReverseMatch:
+                    return redirect('/')
         else:
             context['form'] = form
 
