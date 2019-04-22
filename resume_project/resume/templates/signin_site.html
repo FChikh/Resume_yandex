@@ -37,6 +37,11 @@
                             <label for="password"><i class="zmdi zmdi-lock"></i></label>
                             <input type="password" name="password" id="password" placeholder="Password"/>
                         </div>
+                        {% if login_error == 1 %}
+                            <div class="form-group">
+                                <h4>Incorrect login or password</h4>
+                            </div>
+                        {% endif %}
                         <div class="form-group">
                             <input type="checkbox" name="remember-me" id="remember-me" class="agree-term"/>
                             <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember
