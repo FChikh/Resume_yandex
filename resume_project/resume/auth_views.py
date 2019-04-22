@@ -44,14 +44,13 @@ def register(request):
     context['title'] = 'Регистрация'
     context['password_match'] = 1
     context['invalid_form'] = 0
+    context['user_exists'] = 0
 
     if request.method == "GET":
         context['form'] = RegistrationForm()
     elif request.method == "POST":
         form = RegistrationForm(request.POST)
-        if form.data.get('password') == form.data.get('re_password') and not(form.is_valid()):
-            context['invalid_form'] = 0
-        elif form.data.get('password') != form.data.get('re_password'):
+        if form.data.get('password') != form.data.get('re_password'):
             context['password_match'] = 0
         if form.is_valid():
             try:
@@ -61,6 +60,7 @@ def register(request):
                     password=form.data.get('password'),
                 )
             except IntegrityError:
+                context['user_exists'] = 1
                 messages.error(request, 'Пользователь с таким логином уже существует')
                 return render(request, 'registration.html', context)
             else:
@@ -71,6 +71,8 @@ def register(request):
                 except NoReverseMatch:
                     return redirect('/')
         else:
+            if form.data.get('password') == form.data.get('re_password'):
+                context['invalid_form'] = 1
             context['form'] = form
 
     return render(request, 'registration.html', context)
