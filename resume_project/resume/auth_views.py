@@ -49,22 +49,25 @@ def register(request):
         form = RegistrationForm(request.POST)
         print(form)
         if form.is_valid():
-            try:
-                user = User.objects.create_user(
-                    username=form.data.get('username'),
-                    email=form.data.get('email'),
-                    password=form.data.get('password'),
-                )
-            except IntegrityError:
-                messages.error(request, 'Пользователь с таким логином уже существует')
-                return render(request, 'registraion.html', context)
-            else:
-                user.save()
-                login(request, user)
+            if form.data.get('password') == form.data.get('re_password'):
                 try:
-                    return redirect(next_page)
-                except NoReverseMatch:
-                    return redirect('/')
+                    user = User.objects.create_user(
+                        username=form.data.get('username'),
+                        email=form.data.get('email'),
+                        password=form.data.get('password'),
+                    )
+                except IntegrityError:
+                    messages.error(request, 'Пользователь с таким логином уже существует')
+                    return render(request, 'registraion.html', context)
+                else:
+                    user.save()
+                    login(request, user)
+                    try:
+                        return redirect(next_page)
+                    except NoReverseMatch:
+                        return redirect('/')
+            else:
+                pass
         else:
             context['form'] = form
 
