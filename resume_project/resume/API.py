@@ -40,10 +40,7 @@ def github(username, site_username):
         command = "mkdir static/users_dir/" + site_username
         os.system(command)
     else:
-        print("FOUND_USER_DIR")
-
-
-    #return #DELETE!!!!!!!
+        print("FOUND USER DIR\nUSER: " + site_username)
 
     client_id_and_secret = '?client_id=ea92b1a1958dd3d3e965&client_secret=2ee1ba9e4052deae4c79ba5c2b43cc0cadda2636'
 
