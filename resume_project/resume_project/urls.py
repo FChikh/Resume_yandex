@@ -29,7 +29,8 @@ urlpatterns = [
     path('login/', auth_views.signin_site_page),
     path('register/', auth_views.register),
     path('logout/', views.logout_func),
-    path('', views.main)
+    path('', views.main),
+    path('test/', views.test)
 ]
 
 if settings.DEBUG == False:

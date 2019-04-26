@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.shortcuts import render, redirect
-
+from resume.API import github
 
 @login_required
 def main(request):  # main page
@@ -16,3 +16,12 @@ def main(request):  # main page
 def logout_func(request):
     logout(request)
     return redirect('/login/?next=/')
+
+@login_required
+def test(request):
+    data = dict()
+
+    github('jonkykong', request.user.username)
+
+
+    return render(request, "main.html", data)
