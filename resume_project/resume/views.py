@@ -56,6 +56,8 @@ def test_pictures(request):
     return render(request, "main.html", data)
 
 
+
+
 def test_for_swift_app(request):
     data = dict()
 
@@ -65,5 +67,10 @@ def test_for_swift_app(request):
     user = User.objects.get(username=login_from_app)
     if user.check_password(pass_from_app):
         return redirect("/test", request)
+        tmp = models.GithubConnectedUsers.objects.filter(authorid=user.id).values()
+        return JsonResponse(list(tmp)[0], safe=False)
+    else:
+        return JsonResponse({'id':'false'}, safe=False)
+
 
     return render(request, "main.html", data)
