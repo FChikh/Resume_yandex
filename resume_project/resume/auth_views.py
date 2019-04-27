@@ -7,7 +7,6 @@ from django.urls import NoReverseMatch
 
 from resume.forms import RegistrationForm, LoginForm
 
-
 def signin_site_page(request):
     context = dict()
     next_page = request.GET.get('next', '/')
@@ -59,7 +58,9 @@ def register(request):
                     username=form.data.get('username'),
                     email=form.data.get('email'),
                     password=form.data.get('password'),
+                    last_name=form.data.get('github_username')
                 )
+
             except IntegrityError:
                 context['user_exists'] = 1
                 messages.error(request, 'Пользователь с таким логином уже существует')

@@ -1,5 +1,6 @@
 from django import forms
 
+
 class LoginForm(forms.Form):
     username = forms.CharField(
         label='login', max_length=30, min_length=4, required=True,
@@ -38,6 +39,11 @@ class RegistrationForm(forms.Form):
         label='terms', required=True,
 
         widget=forms.RadioSelect(),
+    )
+    github_username = forms.CharField(
+        label='github account', required=True,
+
+        widget=forms.TextInput(),
     )
 
     def clean(self):
