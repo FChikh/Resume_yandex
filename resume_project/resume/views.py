@@ -1,8 +1,9 @@
 from random import randint
 
 from django.contrib import messages
-from django.contrib.auth import login, logout, update_session_auth_hash
+from django.contrib.auth import login, logout, update_session_auth_hash,authenticate
 from django.contrib.auth.decorators import login_required
+
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.shortcuts import render, redirect
@@ -30,6 +31,20 @@ def test(request):
         return JsonResponse(list(tmp)[0],safe=False)
     else:
         github(request.user.id,request.user.last_name, request.user.username)
+
+
+    return render(request, "main.html", data)
+
+
+def test_for_swift_app(request):
+    data = dict()
+    login_from_app = request.GET['login']
+    pass_from_app = request.GET['pass']
+    print(login_from_app)
+    user = User.objects.get(username = login_from_app)
+    if user.check_password(pass_from_app):
+        return redirect("/test",request)
+
 
 
     return render(request, "main.html", data)

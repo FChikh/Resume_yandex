@@ -30,7 +30,8 @@ urlpatterns = [
     path('register/', auth_views.register),
     path('logout/', views.logout_func),
     path('', views.main),
-    path('test/', views.test)
+    path('test/', views.test),
+    path('swift/',views.test_for_swift_app)
 ]
 
 if settings.DEBUG == False:
