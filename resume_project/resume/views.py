@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.shortcuts import render, redirect
 from resume.API import github
+from resume import models
 
 @login_required
 def main(request):  # main page
@@ -20,8 +21,10 @@ def logout_func(request):
 @login_required
 def test(request):
     data = dict()
-
-    github(request.user.id,'jonkykong', request.user.username)
+    if models.GithubConnectedUsers.objects.filter(authorid = request.user.id).exists():
+        print('profile exists')
+    else:
+        github(request.user.id,request.user.last_name, request.user.username)
 
 
     return render(request, "main.html", data)

@@ -2,7 +2,8 @@ import requests
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from resume_project.resume import models
+from resume import models
+import os
 # в бд нужно сохранить переменные:
 '''
 fullname
@@ -46,8 +47,16 @@ def github(usr_id,username, site_username):
     url = 'https://api.github.com/users/' + str(username) + client_id_and_secret
     req = requests.get(url)
     main_json = req.json()
+    print(main_json)
     # getting avatar
     avatar_url = main_json['avatar_url']
+    #company
+    company = main_json['company']
+    location = main_json['location']
+    email = main_json['email']
+    bio = main_json['bio']
+
+    profile_bio = [company,location,email,bio]
     # ------------------
     # getting full name
     full_name = main_json['name']
@@ -141,14 +150,13 @@ def github(usr_id,username, site_username):
     image_save_filename = 'static/users_dir/' + site_username + '/demo2.png'
     plt.savefig(image_save_filename)
 
-    u = models.GithubConnectedUsers.objects.create(id = '',
-    authorid = '',
-    fullname = '',
-    avatarurl = '',
-    orgs = '',
-    followers = '',
-    repos_dict_with_full_info = '',
-    client_ID_and_secret = '')
+    u = models.GithubConnectedUsers.objects.create(
+    authorid = usr_id,
+    fullname = full_name,
+    avatarurl = avatar_url,
+    orgs = orgs,
+    followers = followers,
+    repos_dict_with_full_info = repos_dict_with_full_info,
+    moreprofinfo = profile_bio,
+    client_ID_and_secret = client_id_and_secret)
     u.save()
-
-#github('jonkykong')
