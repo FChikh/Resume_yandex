@@ -31,6 +31,7 @@ plt.savefig('directoryforimages/user/demo2.png')
 
 
 def github(username, site_username):
+
     #check user dictory
 
     command = 'ls static/users_dir | grep ' + site_username
