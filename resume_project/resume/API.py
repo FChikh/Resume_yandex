@@ -2,8 +2,7 @@ import requests
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-import os
-
+from resume_project.resume import models
 # в бд нужно сохранить переменные:
 '''
 fullname
@@ -30,7 +29,7 @@ plt.savefig('directoryforimages/user/demo2.png')
 '''
 
 
-def github(username, site_username):
+def github(usr_id,username, site_username):
     #check user dictory
 
     command = 'ls static/users_dir | grep ' + site_username
@@ -142,5 +141,14 @@ def github(username, site_username):
     image_save_filename = 'static/users_dir/' + site_username + '/demo2.png'
     plt.savefig(image_save_filename)
 
+    u = models.GithubConnectedUsers.objects.create(id = '',
+    authorid = '',
+    fullname = '',
+    avatarurl = '',
+    orgs = '',
+    followers = '',
+    repos_dict_with_full_info = '',
+    client_ID_and_secret = '')
+    u.save()
 
 #github('jonkykong')
