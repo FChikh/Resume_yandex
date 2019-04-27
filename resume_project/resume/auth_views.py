@@ -7,6 +7,7 @@ from django.urls import NoReverseMatch
 
 from resume.forms import RegistrationForm, LoginForm
 
+
 def signin_site_page(request):
     context = dict()
     next_page = request.GET.get('next', '/')

@@ -1,9 +1,11 @@
 import requests
 import matplotlib
+
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from resume import models
 import os
+
 # в бд нужно сохранить переменные:
 '''
 fullname
@@ -30,7 +32,7 @@ plt.savefig('directoryforimages/user/demo2.png')
 '''
 
 
-def github(usr_id,username, site_username):
+def github(usr_id, username, site_username):
     # check user dictory
 
     command = 'ls static/users_dir | grep ' + site_username
@@ -50,13 +52,13 @@ def github(usr_id,username, site_username):
     print(main_json)
     # getting avatar
     avatar_url = main_json['avatar_url']
-    #company
+    # company
     company = main_json['company']
     location = main_json['location']
     email = main_json['email']
     bio = main_json['bio']
 
-    profile_bio = [company,location,email,bio]
+    profile_bio = [company, location, email, bio]
     # ------------------
     # getting full name
     full_name = main_json['name']
@@ -151,12 +153,12 @@ def github(usr_id,username, site_username):
     plt.savefig(image_save_filename)
 
     u = models.GithubConnectedUsers.objects.create(
-    authorid = usr_id,
-    fullname = full_name,
-    avatarurl = avatar_url,
-    orgs = orgs,
-    followers = followers,
-    repos_dict_with_full_info = repos_dict_with_full_info,
-    moreprofinfo = profile_bio,
-    client_ID_and_secret = client_id_and_secret)
+        authorid=usr_id,
+        fullname=full_name,
+        avatarurl=avatar_url,
+        orgs=orgs,
+        followers=followers,
+        repos_dict_with_full_info=repos_dict_with_full_info,
+        moreprofinfo=profile_bio,
+        client_ID_and_secret=client_id_and_secret)
     u.save()

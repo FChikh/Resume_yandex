@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.urls import path
 import django.views.static
 
-
 from resume_project import settings
 import django.views.static
 
@@ -31,9 +30,10 @@ urlpatterns = [
     path('logout/', views.logout_func),
     path('', views.main),
     path('test/', views.test),
-    path('swift/',views.test_for_swift_app),
+    path('swift/', views.test_for_swift_app),
     path('test_pictures/', views.test_pictures)
 ]
 
 if settings.DEBUG == False:
-    urlpatterns += url(r'^static/(?P<path>.*)$', django.views.static.serve, {'document_root': settings.STATIC_URL, 'show_indexes': settings.DEBUG}),
+    urlpatterns += url(r'^static/(?P<path>.*)$', django.views.static.serve,
+                       {'document_root': settings.STATIC_URL, 'show_indexes': settings.DEBUG}),
