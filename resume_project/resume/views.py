@@ -38,6 +38,7 @@ def test(request):
 
 def test_for_swift_app(request):
     data = dict()
+    
     login_from_app = request.GET['login']
     pass_from_app = request.GET['pass']
     print(login_from_app)
