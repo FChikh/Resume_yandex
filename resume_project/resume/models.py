@@ -14,4 +14,5 @@ class GithubConnectedUsers(models.Model):
     orgs = models.CharField(max_length=90000)
     followers = models.IntegerField()
     repos_dict_with_full_info = models.CharField(max_length=90000)
+    moreprofinfo = models.CharField(max_length=90000,default='')
     client_ID_and_secret = models.CharField(max_length=144)
