@@ -21,7 +21,7 @@ def logout_func(request):
 def test(request):
     data = dict()
 
-    github('jonkykong', request.user.username)
+    github(request.user.id,'jonkykong', request.user.username)
 
 
     return render(request, "main.html", data)
