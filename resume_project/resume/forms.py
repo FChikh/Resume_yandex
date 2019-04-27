@@ -13,6 +13,8 @@ class LoginForm(forms.Form):
     )
 
 
+
+
 class RegistrationForm(forms.Form):
     username = forms.CharField(
         label='login', max_length=30, min_length=4, required=True,
