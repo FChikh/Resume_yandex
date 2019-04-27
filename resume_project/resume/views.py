@@ -35,6 +35,22 @@ def test(request):
 
     return render(request, "main.html", data)
 
+@login_required
+def test_pictures(request):
+    data = dict()
+    if models.GithubConnectedUsers.objects.filter(authorid=request.user.id).exists():
+        print('profile exists')
+
+        data['pics'] = ['/static/users_dir/' + request.user.username + '/demo.png', '/static/users_dir/' + request.user.last_name + '/demo2.png']
+
+        return render(request, "plots.html", data)
+
+    else:
+        github(request.user.id,request.user.last_name, request.user.username)
+
+
+    return render(request, "main.html", data)
+
 
 def test_for_swift_app(request):
     data = dict()
