@@ -8,7 +8,8 @@ from django.db import IntegrityError
 from django.shortcuts import render, redirect
 from resume.API import github
 from resume import models
-
+from django.core import serializers
+from django.http import JsonResponse
 @login_required
 def main(request):  # main page
     data = dict()
@@ -23,6 +24,10 @@ def test(request):
     data = dict()
     if models.GithubConnectedUsers.objects.filter(authorid = request.user.id).exists():
         print('profile exists')
+        tmp = models.GithubConnectedUsers.objects.filter(authorid = request.user.id).values()
+        #tmp = tmp[0]
+
+        return JsonResponse(list(tmp)[0],safe=False)
     else:
         github(request.user.id,request.user.last_name, request.user.username)
 
