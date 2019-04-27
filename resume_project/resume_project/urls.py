@@ -31,7 +31,8 @@ urlpatterns = [
     path('logout/', views.logout_func),
     path('', views.main),
     path('test/', views.test),
-    path('swift/',views.test_for_swift_app)
+    path('swift/',views.test_for_swift_app),
+    path('test_pictures/', views.test_pictures)
 ]
 
 if settings.DEBUG == False:
